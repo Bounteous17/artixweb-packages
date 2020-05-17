@@ -7,7 +7,12 @@ import (
 )
 
 func main() {
-	app := fiber.New()
+	app := fiber.New(&fiber.Settings{
+		// Prefork feature is disabled due to a bug related
+		// to the args flags, since they are not being detected
+		Prefork:      false,
+		ServerHeader: tools.Config.API.Header,
+	})
 
 	app.Get("/packages/find/:packageName", router.Find)
 

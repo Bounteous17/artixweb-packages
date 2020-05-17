@@ -11,7 +11,8 @@ import (
 // YamlConfig struct
 type YamlConfig struct {
 	API struct {
-		Port int `yaml:"port"`
+		Port   int    `yaml:"port"`
+		Header string `yaml:"header"`
 	}
 }
 
