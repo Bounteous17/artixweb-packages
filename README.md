@@ -9,3 +9,9 @@ Installation is done using the command:
 ```
 go get
 ```
+
+## 👀 Examples
+
+```
+curl -X GET http://localhost:2427/package/find/linux-zen
+```
