@@ -3,18 +3,24 @@ package main
 import (
 	"github.com/bounteous/artixweb-packages/router"
 	"github.com/bounteous/artixweb-packages/tools"
+	"github.com/gofiber/cors"
 	"github.com/gofiber/fiber"
 )
 
 func main() {
-	app := fiber.New(&fiber.Settings{
-		// Prefork feature is disabled due to a bug related
-		// to the args flags, since they are not being detected
-		Prefork:      false,
-		ServerHeader: tools.Config.API.Header,
-	})
+	var settings fiber.Settings
 
-	app.Get("/packages/find/:packageName", router.Find)
+	// Prefork feature is disabled due to a bug related
+	// to the args flags, since they are not being detected
+	settings.Prefork = false
+	settings.ServerHeader = tools.Config.API.Header
+
+	app := fiber.New(&settings)
+
+	app.Use(cors.New())
+
+	apiPackages := app.Group("/package")
+	apiPackages.Get("/find/:packageName", router.Router.Package.Find)
 
 	app.Listen(tools.Config.API.Port)
 }
