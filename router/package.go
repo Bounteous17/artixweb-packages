@@ -21,7 +21,7 @@ func find(fiber *fiber.Ctx) {
 	var params gitea.SearchParams
 	params.PackageName = fiber.Params("packageName")
 
-	fiber.JSON(gitea.Search(params))
+	fiber.JSON(gitea.Search(params).Data)
 }
 
 func listRouter() RouteList {

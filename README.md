@@ -10,6 +10,18 @@ Installation is done using the command:
 go get
 ```
 
+## ⚡️ Quickstart
+
+#### Run the app
+```
+make run
+```
+
+#### Build the app
+```
+make build
+```
+
 ## 👀 Examples
 
 ```

@@ -20,8 +20,6 @@ type YamlConfig struct {
 }
 
 func getConfig() YamlConfig {
-	fmt.Println("Parsing Config YAML file")
-
 	var fileName string
 
 	flag.StringVar(&fileName, "f", "", "YAML file to parse")
@@ -42,8 +40,6 @@ func getConfig() YamlConfig {
 	if err != nil {
 		fmt.Printf("Error parsing YAML file: %S\n", err)
 	}
-
-	fmt.Printf("Result: %v\n", yamlConfig)
 
 	return yamlConfig
 }
