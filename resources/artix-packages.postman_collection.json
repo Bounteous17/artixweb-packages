@@ -1,0 +1,31 @@
+{
+	"info": {
+		"_postman_id": "fbf807d6-4df5-4d52-8d2e-ad551f9cd961",
+		"name": "artix-packages",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:2427/package/find/linux-zen",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2427/package/find/linux-zen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2427",
+					"path": [
+						"package",
+						"find",
+						"linux-zen"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
