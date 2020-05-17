@@ -20,7 +20,7 @@ func main() {
 	app.Use(cors.New())
 
 	apiPackages := app.Group("/package")
-	apiPackages.Get("/find/:packageName", router.Router.Package.Find)
+	apiPackages.Get("/find/:packageName", router.List.Package.Find)
 
 	app.Listen(tools.Config.API.Port)
 }

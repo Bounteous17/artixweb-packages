@@ -14,6 +14,9 @@ type YamlConfig struct {
 		Port   int    `yaml:"port"`
 		Header string `yaml:"header"`
 	}
+	GITEA struct {
+		ReposURL string `yaml:"reposURL"`
+	}
 }
 
 func getConfig() YamlConfig {

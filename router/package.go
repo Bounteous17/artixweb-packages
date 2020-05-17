@@ -1,7 +1,7 @@
 package router
 
 import (
-	"strings"
+	"github.com/bounteous/artixweb-packages/gitea"
 
 	"github.com/gofiber/fiber"
 )
@@ -18,8 +18,10 @@ type RouteList struct {
 
 // Find func
 func find(fiber *fiber.Ctx) {
-	info := []string{"Searching for package info ->", fiber.Params("packageName"), "\n"}
-	fiber.Send(strings.Join(info, " "))
+	var params gitea.SearchParams
+	params.PackageName = fiber.Params("packageName")
+
+	fiber.JSON(gitea.Search(params))
 }
 
 func listRouter() RouteList {
@@ -29,5 +31,5 @@ func listRouter() RouteList {
 	return router
 }
 
-// Router list
-var Router RouteList = listRouter()
+// List list
+var List RouteList = listRouter()

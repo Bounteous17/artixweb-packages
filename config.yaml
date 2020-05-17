@@ -1,3 +1,5 @@
 api:
   port: 2427
   header: "An Artix linux Go server"
+gitea:
+  reposURL: "https://gitea.artixlinux.org/api/v1"
